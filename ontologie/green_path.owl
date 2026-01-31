@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://test.org/green_path.owl"
+         xmlns="http://test.org/green_path.owl#">
+
+<owl:Ontology rdf:about="http://test.org/green_path.owl"/>
+
+<owl:ObjectProperty rdf:about="#haCarburante">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Veicolo"/>
+  <rdfs:range rdf:resource="#Carburante"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#ariaCondizionataAccesa">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Veicolo"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#emissioneBase">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Veicolo"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Veicolo">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Carburante">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Strada">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Diesel">
+  <rdfs:subClassOf rdf:resource="#Carburante"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Elettrico">
+  <rdfs:subClassOf rdf:resource="#Carburante"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Ibrido">
+  <rdfs:subClassOf rdf:resource="#Carburante"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AreaProtetta">
+  <rdfs:subClassOf rdf:resource="#Strada"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#Tesla_Model3">
+  <rdf:type rdf:resource="#Veicolo"/>
+  <haCarburante rdf:resource="#elettrico1"/>
+  <emissioneBase rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</emissioneBase>
+  <ariaCondizionataAccesa rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ariaCondizionataAccesa>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#elettrico1">
+  <rdf:type rdf:resource="#Elettrico"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Toyota_Yaris_Hybrid">
+  <rdf:type rdf:resource="#Veicolo"/>
+  <haCarburante rdf:resource="#ibrido1"/>
+  <emissioneBase rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">82.0</emissioneBase>
+  <ariaCondizionataAccesa rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ariaCondizionataAccesa>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ibrido1">
+  <rdf:type rdf:resource="#Ibrido"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Fiat_500_Diesel">
+  <rdf:type rdf:resource="#Veicolo"/>
+  <haCarburante rdf:resource="#diesel1"/>
+  <emissioneBase rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">110.0</emissioneBase>
+  <ariaCondizionataAccesa rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ariaCondizionataAccesa>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#diesel1">
+  <rdf:type rdf:resource="#Diesel"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Via_Sparano">
+  <rdf:type rdf:resource="#AreaProtetta"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Bari_Vecchia">
+  <rdf:type rdf:resource="#AreaProtetta"/>
+</owl:NamedIndividual>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Diesel"/>
+    <rdf:Description rdf:about="#Elettrico"/>
+    <rdf:Description rdf:about="#Ibrido"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+
+</rdf:RDF>
