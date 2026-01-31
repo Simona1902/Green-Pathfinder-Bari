@@ -1,0 +1,7 @@
+Scenario,P_Traffico,CO2_g,Tempo_min
+Yaris - S1 (Ottimale),5%,1540.8,24.6
+Yaris - S2 (Pendolare),45%,2286.56,31.0
+Yaris - S3 (Stress Test),90%,4190.56,62.3
+Tesla - Zero Emission,5%,0.0,24.6
+Diesel - Baseline,5%,1985.6,24.6
+Diesel - Critico,90%,5941.28,62.3
